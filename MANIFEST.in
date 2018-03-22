@@ -1,0 +1,2 @@
+include *.md *.txt
+recursive-include fwtheme_django_jasmin *.ico *.png *.gif *.jpg *.svg *.eot *.ttf *.woff *.css *.js *.txt *.html *.json *.example

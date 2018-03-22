@@ -1,0 +1,135 @@
+{% extends "fwtheme_django/layout.html" %}
+{% load staticfiles cookielaw_tags i18n %}
+    
+    {% block stylesheets %}
+        <!-- Bootstrap Core
+        CSS -->
+        <link rel="stylesheet" href="http://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.1/4/flatly/bootstrap.css" media="screen">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="http://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.1/_assets/css/custom.min.css">
+        <link rel="stylesheet" href="http://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.1/_assets/css/org-custom.css">
+
+        {# some customisations go here before ceda theme styling #}
+        {% block stylesheets_pre_extra %}{% endblock stylesheets_pre_extra %}
+
+        <link href="{% static "fwtheme_django/css/fw-custom.css" %}" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        {# most further customisations can go here, after jasmin theme styling #}
+        {% block stylesheets_extra %}{% endblock %}
+
+    {% endblock stylesheets %}
+
+    {% block navbar_main %}
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            {% block navbar_branding %}
+            <a href="/" class="navbar-brand">
+                <img src="http://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.1/_assets/img/jasmin_logo_white_greendots_h50.png" alt="JASMIN logo">
+            </a>
+            {% endblock navbar_branding %}
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% block navigation %}
+                {% block navbar_dropdown %}
+                {% endblock navbar_dropdown %}
+            {% endblock navigation %}
+            
+        </div>
+    </div>
+    {% endblock navbar_main %}
+        
+
+    {% block page_special %}
+    {% endblock %}
+
+    <div class="container">
+
+      {% block content_main %}
+      {% block content_header %}
+
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            {% block page_title %}
+              <h1>Page title</h1>
+              <p class="lead">Leader text for this page</p>
+            {% endblock %}
+          </div>
+          {% block info_panel %}
+          <div class="col-lg-4 col-md-5 col-sm-6">
+            <div class="sponsor">
+                {% block notifications %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if 'success' in message.tags %}
+                                <div class="alert alert-with-icon alert-success" role="alert">
+                                    <i class="fa fa-check-circle"></i> <span>{{ message }}</span>
+                                </div>
+                            {% elif 'error' in message.tags %}
+                                <div class="alert alert-with-icon alert-danger" role="alert">
+                                    <i class="fa fa-exclamation-circle"></i> <span>{{ message }}</span>
+                                </div>
+                            {% elif 'warning' in message.tags %}
+                                <div class="alert alert-with-icon alert-warning" role="alert">
+                                    <i class="fa fa-exclamation-triangle"></i> <span>{{ message }}</span>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-with-icon alert-info" role="alert">
+                                    <i class="fa fa-info-circle"></i> <span>{{ message }}</span>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endblock %}  
+              
+            </div>
+          </div>
+          {% endblock info_panel %}
+        </div>
+      </div>
+
+      {% endblock content_header %}
+
+      {% block content_panel %}
+      <div class="row">
+          <div class="col-md-12">
+              {% block content %}{% endblock content%}
+          </div>
+      </div>
+      {% endblock content_panel %}
+
+      {% endblock content_main %}
+
+
+    </div>
+
+    {% block footer %}
+    <footer>
+    <div class="container">
+        <div class="row"><hr/></div>
+    </div>
+    <div class="container">
+        <div class="row">
+        <div class="col text-center ">
+            <a href="http://www.ncas.ac.uk" title="NCAS"><img src="http://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.1/_assets/img/nerc-long-logo-261.png" title="NERC logo" alt="NERC logo"></a>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center small">
+                Copyright © 2018 <a href="http://www.stfc.ac.uk">STFC</a>
+                All Rights Reserved<br>
+                <a href="http://www.ceda.ac.uk/accessibility" target="_blank">Accessibility</a> |
+                <a href="http://www.ceda.ac.uk/disclaimer" target="_blank">Disclaimer</a> |
+                <a href="http://www.ceda.ac.uk/privacy-and-cookies/" target="_blank">Privacy and Cookies</a><br/>
+                <a href="http://www.ceda.ac.uk" target="_blank">CEDA</a>
+            </p>
+        </div>
+        <div class="col text-center">
+            <a href="http://www.nceo.ac.uk" title="STFC"><img src="http://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.1/_assets/img/STFCMediumColourTrans.png" title="STFC logo" alt="STFC logo"></a>
+        </div>
+        </div>
+    </div>
+    </footer>
+    {% endblock footer %}
