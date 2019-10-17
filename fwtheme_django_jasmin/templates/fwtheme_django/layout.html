@@ -4,10 +4,10 @@
     {% block stylesheets %}
         <!-- Bootstrap Core
         CSS -->
-        <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/4/flatly/bootstrap.css" media="screen">
+        <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/4/flatly/bootstrap.css" media="screen">
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/_assets/css/custom.min.css">
-        <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/_assets/css/org-custom.css">
+        <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/_assets/css/custom.min.css">
+        <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/_assets/css/org-custom.css">
 
         {# some customisations go here before ceda theme styling #}
         {% block stylesheets_pre_extra %}{% endblock stylesheets_pre_extra %}
@@ -53,8 +53,8 @@
         */
 
         -->
-        <link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/_assets/css/MyFontsWebfontsKit.css">
-        <link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/_assets/css/webfonts.css">
+        <link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/_assets/css/MyFontsWebfontsKit.css">
+        <!--<link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/_assets/css/webfonts.css"> -->
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -68,7 +68,7 @@
         <div class="container">
             {% block navbar_branding %}
             <a href="/" class="navbar-brand">
-                <img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/_assets/img/jasmin_logo_white_greendots_h50.png" alt="JASMIN logo">
+                <img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/_assets/img/jasmin_logo_white_greendots_h50.png" alt="JASMIN logo">
             </a>
             {% endblock navbar_branding %}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -151,28 +151,24 @@
 
     {% block footer %}
     <footer>
-    <div class="container">
-        <div class="row"><hr/></div>
-    </div>
-    <div class="container">
-        <div class="row">
-        <div class="col text-center ">
-            <a href="http://www.ncas.ac.uk" title="NCAS"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/_assets/img/nerc-long-logo-261.png" title="NERC logo" alt="NERC logo"></a>
+        <div class="container">
+            <div class="row d-flex justify-content-around">
+                <div class="row d-flex justify-content-around">
+                    <div class="col col-md-4 text-center ">
+                        <a href="https://stfc.ukri.org" title="STFC"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/_assets/img/UKRI_STF_Council-Logo_Horiz-RGB_h80.png" title="STFC UKRI logo" alt="STFC UKRI logo" height="80" ></a>
+                    </div>
+                <div class="col-md-4">
+                    <p class="text-center small">
+                        <a href="http://www.ceda.ac.uk/accessibility" target="_blank">Accessibility</a> |
+                        <a href="http://www.ceda.ac.uk/disclaimer" target="_blank">Disclaimer</a> |
+                        <a href="http://www.ceda.ac.uk/privacy-and-cookies/" target="_blank">Privacy and Cookies</a> |
+                        <a href="https://www.ceda.ac.uk" target="_blank">CEDA</a><br/>
+                    </p>
+                </div>
+                <div  class="col col-md-4 text-center">
+                    <a href="https://nerc.ukri.org/" title="NERC"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2.1/_assets/img/UKRI_NER_Council-Logo_Horiz-RGB_h80.png" title="NERC UKRI logo" alt="NERC UKRI logo"  height="80" ></a>
+                    </div>
+            </div>
         </div>
-        <div class="col-sm-4">
-            <p class="text-center small">
-                Copyright © 2018 <a href="http://www.stfc.ac.uk">STFC</a>
-                All Rights Reserved<br>
-                <a href="http://www.ceda.ac.uk/accessibility" target="_blank">Accessibility</a> |
-                <a href="http://www.ceda.ac.uk/disclaimer" target="_blank">Disclaimer</a> |
-                <a href="http://www.ceda.ac.uk/privacy-and-cookies/" target="_blank">Privacy and Cookies</a><br/>
-                <a href="http://www.ceda.ac.uk" target="_blank">CEDA</a>
-            </p>
-        </div>
-        <div class="col text-center">
-            <a href="http://www.nceo.ac.uk" title="STFC"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.2/_assets/img/STFCMediumColourTrans.png" title="STFC logo" alt="STFC logo"></a>
-        </div>
-        </div>
-    </div>
     </footer>
     {% endblock footer %}
