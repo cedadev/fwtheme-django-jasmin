@@ -11,8 +11,6 @@
 
         {# some customisations go here before ceda theme styling #}
         {% block stylesheets_pre_extra %}{% endblock stylesheets_pre_extra %}
-
-        <link href="{% static "fwtheme_django/css/fw-custom.css" %}" rel="stylesheet">
             <!-- Custom Fonts -->
                     <!--
         /**
@@ -54,7 +52,9 @@
 
         -->
         <link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/css/MyFontsWebfontsKit.css">
-        <!--<link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/css/webfonts.css"> -->
+        <link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/css/webfonts.css">
+        <link href="{% static "fwtheme_django/css/fw-custom.css" %}" rel="stylesheet">
+        <link href="{% static "fwtheme_django/css/custom.css" %}" rel="stylesheet">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -88,7 +88,7 @@
     {% endblock %}
 
     {% block page_container %}
-    <div class="container">
+    <div class="container" id="content-main">
 
       {% block content_main %}
       {% block content_header %}
@@ -150,25 +150,45 @@
     {% endblock page_container %}
 
     {% block footer %}
-    <footer>
-        <div class="container">
-            <div class="row d-flex justify-content-around">
-                <div class="row d-flex justify-content-around">
-                    <div class="col col-md-4 text-center ">
-                        <a href="https://stfc.ukri.org" title="STFC"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/img/UKRI_STF_Council-Logo_Horiz-RGB_h80.png" title="STFC UKRI logo" alt="STFC UKRI logo" height="80" ></a>
+        <footer class="site-footer border-top pt-3 px-3 mt-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="footer-heading">Useful links</h2>
+                        <ul class="footer-list">
+                            <li><a href="https://www.jasmin.ac.uk" target="_blank">JASMIN</a></li>
+                            <li><a href="https://www.ceda.ac.uk" target="_blank">CEDA</a></li>
+                            <li><a href="https://accounts.jasmin.ac.uk" target="_blank">Accounts Portal</a></li>
+                            <li><a href="https://cloud.jasmin.ac.uk" target="_blank">Cloud Portal</a></li>
+                            <li><a href="https://notebooks.jasmin.ac.uk" target="_blank">Notebook Service</a></li>
+                        </ul>
                     </div>
-                <div class="col-md-4">
-                    <p class="text-center small">
-                        <a href="https://accounts.jasmin.ac.uk/account/accessibility/" target="_blank">Accessibility</a> |
-                        <a href="https://accounts.jasmin.ac.uk/account/support/" target="_blank">Support</a> |
-                        <a href="https://accounts.jasmin.ac.uk/account/privacy/" target="_blank">Privacy</a> |
-                        <a href="https://accounts.jasmin.ac.uk/account/conditions/" target="_blank">Terms and Conditions</a><br/>
-                    </p>
+                    <div class="col">
+                        <h2 class="footer-heading">Contact us</h2>
+                        <ul class="footer-list">
+                            <li><a href="https://help.jasmin.ac.uk" target="_blank"><i class="mr-2 fas fa-fw fa-bookmark"></i>Documentation</a></li>
+                            <li><a href="https://www.ceda.ac.uk/contact/" target="_blank"><i class="mr-2 fas fa-fw fa-life-ring"></i>Helpdesk</a></li>
+                            <li><a href="https://twitter.com/cedanews" target="_blank"><i class="mr-2 fab fa-fw fa-twitter"></i>Twitter</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCYjSH2ET9nLMhDcXa5y2OMg" target="_blank"><i class="mr-2 fab fa-fw fa-youtube"></i>YouTube</a></li>
+                        </ul>
+                    </div>
+                    <div class="text-center col-md-5">
+                        <p class="mb-0"><strong>JASMIN is operated by the Science and Technology Facilities Council on behalf of the Natural Environment Research Council.</strong></p>
+                        <a href="https://stfc.ukri.org" title="STFC" target="_blank"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.4c01/_assets/img/UKRI_STF_Council-Logo_Horiz-RGB_h80.png" title="STFC UKRI logo" alt="STFC UKRI logo" height="80"></a>
+                        <a href="https://nerc.ukri.org/" title="NERC" target="_blank"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.4c01/_assets/img/UKRI_NER_Council-Logo_Horiz-RGB_h80.png" title="NERC UKRI logo" alt="NERC UKRI logo" height="80"></a>
+                    </div>
                 </div>
-                <div  class="col col-md-4 text-center">
-                    <a href="https://nerc.ukri.org/" title="NERC"><img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/img/UKRI_NER_Council-Logo_Horiz-RGB_h80.png" title="NERC UKRI logo" alt="NERC UKRI logo"  height="80" ></a>
+                <div class="row">
+                    <div class="py-3 col">
+                        <ul class="d-inline-block list-inline mb-0">
+                            <li class="list-inline-item mr-3">© Copyright 2020 STFC</li>
+                            <li class="list-inline-item mr-3"><a href="https://accounts.jasmin.ac.uk/account/accessibility/" target="_blank">Accessibility</a></li>
+                            <li class="list-inline-item mr-3"><a href="https://accounts.jasmin.ac.uk/account/support/" target="_blank">Support</a></li>
+                            <li class="list-inline-item mr-3"><a href="https://accounts.jasmin.ac.uk/account/privacy/" target="_blank">Privacy</a></li>
+                            <li class="list-inline-item"><a href="https://accounts.jasmin.ac.uk/account/conditions/" target="_blank">Terms and Conditions</a></li>
+                        </ul>
                     </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     {% endblock footer %}
