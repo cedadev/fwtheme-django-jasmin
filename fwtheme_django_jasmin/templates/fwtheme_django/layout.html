@@ -56,10 +56,13 @@
     {# most further customisations can go here, after jasmin theme styling #}
     {% block stylesheets_extra %}{% endblock %}
 
+    <!-- per-page stylesheet block -->
+    {% block stylesheets_page %}{% endblock %}
+
 {% endblock stylesheets %}
 
 {% block navbar_main %}
-    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-success">
+    <div class="navbar navbar-expand-lg sticky-top navbar-dark bg-success">
         <div class="container">
             {% block navbar_branding %}
                 <a href="/" class="navbar-brand">
@@ -83,7 +86,7 @@
 {% endblock %}
 
 {% block page_container %}
-    <div class="container" id="content-main">
+    <div class="container mt-2" id="content-main">
 
         {% block content_main %}
             {% block content_header %}
@@ -91,10 +94,7 @@
                 <div class="page-header" id="banner">
                     <div class="row">
                         <div class="col-lg-8 col-md-7 col-sm-6">
-                            {% block page_title %}
-                                <h1>Page title</h1>
-                                <p class="lead">Leader text for this page</p>
-                            {% endblock %}
+                            <h1>{% block page_title %}Page title{% endblock %}</h1>
                         </div>
                         {% block info_panel %}
                             <div class="col-lg-4 col-md-5 col-sm-6">
@@ -126,6 +126,9 @@
                                 </div>
                             </div>
                         {% endblock info_panel %}
+                    </div>
+                    <div class="row">
+                        {% block breadcrumbs %}{% endblock %}
                     </div>
                 </div>
 
