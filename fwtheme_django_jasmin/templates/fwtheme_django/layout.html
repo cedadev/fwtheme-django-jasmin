@@ -12,37 +12,37 @@
         /**
         * @license
         * MyFonts Webfont Build ID 3596617, 2018-06-14T06:54:30-0400
-        * 
+        *
         * The fonts listed in this notice are subject to the End User License
-        * Agreement(s) entered into by the website owner. All other parties are 
+        * Agreement(s) entered into by the website owner. All other parties are
         * explicitly restricted from using the Licensed Webfonts(s).
-        * 
+        *
         * You may obtain a valid license at the URLs below.
-        * 
+        *
         * Webfont: BoosterNextFY-Thin by Black Foundry
         * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/thin/
-        * 
+        *
         * Webfont: BoosterNextFY-Regular by Black Foundry
         * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/regular/
-        * 
+        *
         * Webfont: BoosterNextFY-Medium by Black Foundry
         * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/medium/
-        * 
+        *
         * Webfont: BoosterNextFY-Black by Black Foundry
         * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/black/
-        * 
+        *
         * Webfont: BoosterNextFY-Light by Black Foundry
         * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/light/
-        * 
+        *
         * Webfont: BoosterNextFY-Bold by Black Foundry
         * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/bold/
-        * 
-        * 
+        *
+        *
         * License: https://www.myfonts.com/viewlicense?type=web&buildid=3596617
         * Licensed pageviews: 10,000
         * Webfonts copyright: Copyright (c) 2013 by FONTYOU. All rights reserved.
         * www.fontyou.com
-        * 
+        *
         * © 2018 MyFonts Inc
         */
 
@@ -57,6 +57,10 @@
 
     <!-- per-page stylesheet block -->
     {% block stylesheets_page %}{% endblock %}
+
+    {% block head_extra %}
+        <link rel="shortcut icon" href="{% artefact "assets/img/favicon.ico" %}">
+    {% endblock head_extra %}
 
 {% endblock stylesheets %}
 
