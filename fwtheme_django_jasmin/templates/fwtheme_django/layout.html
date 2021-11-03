@@ -59,7 +59,9 @@
     {% block stylesheets_page %}{% endblock %}
 
     {% block head_extra %}
-        <link rel="shortcut icon" href="{% artefact "assets/img/favicon.ico" %}">
+        <link rel="icon" href="{% artefact "assets/img/favicon/favicon.ico" %}" sizes="any">
+        <link rel="icon" href="{% artefact "assets/img/favicon/icon.svg" %}" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="{% artefact "assets/img/favicon/apple-touch-icon.png" %}">
     {% endblock head_extra %}
 
 {% endblock stylesheets %}
