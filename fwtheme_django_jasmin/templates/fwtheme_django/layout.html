@@ -1,5 +1,8 @@
 {% extends "fwtheme_django/layout.html" %}
-{% load static cookielaw_tags i18n artefacts %}
+{% load static i18n artefacts fwtheme_tags %}
+
+{# Load the cookielaw tags but not if the app is not loaded. #}
+{% load_no_raise cookielaw_tags %}
 
 {% block stylesheets %}
     <!-- Bootstrap Core CSS -->
